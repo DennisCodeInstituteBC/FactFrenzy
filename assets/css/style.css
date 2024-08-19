@@ -139,3 +139,66 @@ body{
     border: 1px solid #343a40;
     user-select: none;
 }
+
+section{
+    padding: 25px 30px 20px 30px;
+    background-color: #ecf0f1;
+}
+
+section .question-txt{
+    font-size: 25px;
+    font-weight: 400;
+}
+
+section .option-txt{
+    padding: 20px 0;
+    display: block;
+}
+
+section .option-txt .option{
+    background-color: #ecf0f1;
+    border: 1px solid #3498db;
+    border-radius: 5px;
+    padding: 8px 15px;
+    font-size: 18px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;   
+}
+
+section .option-txt .option:last-child{
+    margin-bottom: 0; 
+}
+
+/* Hover effect on options */
+section .option-txt .option:hover{
+    color: #3498db;
+    background-color: #ecf0f1;
+    border: 1px solid #3498db;
+}
+
+/* incorrect color */
+section .option-txt .option.incorrect{
+    color: #e74c3c;
+    background-color: rgb(240,147,138, 0.7);
+    border: 1px solid #e74c3c;
+}
+
+/* correct color */
+section .option-txt .option.correct{
+    color: #2ecc71;
+    background-color: rgb(129,224,169, 0.7);
+    border: 1px solid #2ecc71;
+}
+
+section .option-list .option.disabled{
+    pointer-events: none;
+}
+
+/* footer */
+footer{
+    
+}
