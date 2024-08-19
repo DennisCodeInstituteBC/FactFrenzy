@@ -40,7 +40,7 @@ body{
     background-color: #ecf0f1;
     border-radius: 15px;
     transition: translate(-50%, -50%) scale(0.9);
-    opacity: 0;
+    opacity: 1;
     pointer-events: none;
     transition: all 0.3s ease;
 }
@@ -239,7 +239,6 @@ footer button.show{
 }
 
 /* result section */
-
 .result-section{
     display: flex;
     align-items: center;
@@ -250,7 +249,7 @@ footer button.show{
     background-color: #ecf0f1;
     border-radius: 15px;
     transition: translate(-50%, -50%) scale(0.9);
-    opacity: 1;
+    opacity: 0;
     pointer-events: none;
     transition: all 0.3s ease; 
 }
@@ -313,3 +312,25 @@ footer button.show{
     background-color: #0d6efd;
 }
 
+/* Media Qurie */
+@media (max-width: 768px) {
+    .info-section, 
+    .quiz-section, 
+    .result-section {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .info-section .intro, 
+    section .question-txt {
+        font-size: 16px;
+    }
+
+    .quiz-section header .timer {
+        width: 120px;
+    }
+
+    section .option-txt .option {
+        font-size: 16px;
+    }
+}
