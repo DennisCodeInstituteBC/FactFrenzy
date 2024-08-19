@@ -8,8 +8,8 @@ const timeTxt   = document.querySelector("header .time-left");
 const timeNum   = document.querySelector("header .time-sec");
 
 startBtn.onclick = ()=>{
-    infoSection.classList.remove("activeInfo");
-    quizSection.classList.add("activeQuiz")
+    infoSection.classList.remove("");
+    quizSection.classList.add("")
     showQuestions(0);
     queCounter(1);
     startTimer(15);
