@@ -78,7 +78,7 @@ const questions = [
 startBtn.onclick = () => { 
     infoSection.classList.remove("activeInfo");
     quizSection.classList.add("activeQuiz");
-    showQuestions(0); // Start with the first question
+    showQuestions(0); 
     queCounter(1);
     startTimer(timeValue);
 }
