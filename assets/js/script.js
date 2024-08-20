@@ -16,8 +16,43 @@ let questionNumber = 1;
 let userScore = 0;
 
 // Placeholder functions and variables
-let questions = []; // Define your questions array
 let counter; // Will be defined by the timer functions
-let counterLine; // Will be defined by the timer functions
-let timeText = document.querySelector(".timer .time-left"); // Define this based on your HTML structure
+let timeText = document.querySelector(".timer .time-left"); // Adjust this selector based on your actual HTML
 let widthValue = 0; // Initialize as per your logic
+
+// on Click function to go from Info Section => Quiz Section
+startBtn.onclick = () => { 
+    infoSection.classList.remove("activeInfo");
+    quizSection.classList.add("activeQuiz");
+    showQuestions(0);
+    queCounter(1);
+    startTimer(15);
+}
+
+const restart_Btn = resultSection.querySelector(".restart-btn");
+
+// on Click function to restart the quiz
+restart_Btn.onclick = () => {
+    window.location.reload();
+}
+
+const next_btn = document.querySelector("footer .next-btn");
+const question_count = document.querySelector("footer .total-questions");
+
+next_btn.onclick = () => {
+    if (questionCount < totalQuestions.textContent - 1) {
+        questionCount++;
+        questionNumber++;
+        showQuestions(questionCount);
+        queCounter(questionNumber);
+        clearInterval(counter);
+        startTimer(timeValue);
+        timeText.textContent = "Time Left";
+        next_btn.classList.remove("show");
+    } else {
+        clearInterval(counter);
+        showResult();
+    }
+}
+
+// Define showQuestions, queCounter, startTimer, and showResult functions here based on your quiz logic.
