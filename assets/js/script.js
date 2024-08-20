@@ -55,4 +55,21 @@ next_btn.onclick = () => {
     }
 }
 
-// Define showQuestions, queCounter, startTimer, and showResult functions here based on your quiz logic.
+function showQuestions(index){
+    const question_txt=document.querySelector(".question-txt")
+
+    let quesiton_tag = '<span>'+questions[index].numb+". "+questions[index].questions + '</span>';
+    let option_tag = '<div class = "option"></span>' + questions[index].options[0]+'</span><div>' 
+    + '<div class = "option"></span>' + questions[index].options[1]+'</span><div>'
+    + '<div class = "option"></span>' + questions[index].options[2]+'</span><div>' 
+    + '<div class = "option"></span>' + questions[index].options[3]+'</span><div>';
+    question_txt.innerHTML = quesiton_tag;
+    option_list.innerHTML = option_tag;
+
+    const option = option_list.querySelectorAll(".option");
+
+    for (i=o; i < option.length; i++){
+        option[i].setAttribute("onclick", "optionSelected(this)");
+    }
+
+}
