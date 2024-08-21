@@ -1,9 +1,8 @@
 # Fact Frenzy
----------------Insert Am I responsive image once project is completed
 
 Welcome to Fact Frenzy, an interactive quiz platform designed to challenge your general knowledge while showcasing the power of HTML, CSS, and JavaScript. Whether playing solo to sharpen your mind or competing against friends and family, Fack Frenzy offers an engaging experience that is as fun as it is informative. The responsive design ensures a seamless experience across all devices, while the interactive features, powered by JavaScript, keep the quiz lively and entertaining.
 
----------------Add an image of the finished site here. I like to use amiresponsive to get an image of my site on all device sizes, and amiresponsive allows you to click links on the page and scroll, so each device can show a different element of your site.
+![image](https://github.com/user-attachments/assets/c8d5565f-68ca-4452-8dbe-03328b03c235)
 
 Link ----> https://denniscodeinstitutebc.github.io/FactFrenzy/
 
@@ -39,37 +38,34 @@ Code Used
 - Media
 - Acknowledgments
 - User Experience (UX)
-👩🏻‍💻 View an example of a completed user experience section here
 
 **User Stories**
 
-**Time System**
+- **Time System**
+ 
+ - As a user, I want a timer for each question so that I can answer within a set time limit, adding a sense of urgency and challenge.
 
-As a user, I want a timer for each question so that I can answer within a set time limit, adding a sense of urgency and challenge.
+  - **Acceptance Criteria:** Each question should display a countdown timer, and the system should automatically move to the next question or indicate a time-out if the user doesn't answer within the allotted time.
 
-**Acceptance Criteria:** Each question should display a countdown timer, and the system should automatically move to the next question or indicate a time-out if the user doesn't answer within the allotted time.
+- **Feedback System**
 
-**Feedback System**
+ - As a user, I want to receive immediate feedback after answering a question so that I can see whether my answer is correct or incorrect.
 
-As a user, I want to receive immediate feedback after answering a question so that I can see whether my answer is correct or incorrect.
+ - **Acceptance Criteria: **After each question is answered, the system should display a message indicating correctness, along with a brief explanation or additional information related to the answer.
 
-**Acceptance Criteria: **After each question is answered, the system should display a message indicating correctness, along with a brief explanation or additional information related to the answer.
+- **Scoring System**
 
-**Scoring System**
+ - As a user, I want to see my points after each question so that I can track how many I have answered correctly.
 
-As a user, I want to see my points after each question so that I can track how many I have answered correctly.
+ - **Acceptance Criteria:** The user’s current score should be displayed on the screen and updated after each question, reflecting the number of correct answers.
 
-**Acceptance Criteria:** The user’s current score should be displayed on the screen and updated after each question, reflecting the number of correct answers.
+- **Username Display**
 
-**Username Display**
+ - As a user, I want to input my username before starting the quiz so that I can see it displayed during the quiz, making the experience more personalized.
 
-As a user, I want to input my username before starting the quiz so that I can see it displayed during the quiz, making the experience more personalized.
-
-**Acceptance Criteria:** There should be a prompt for users to enter their username before the quiz begins, and the username should be visible on the quiz screen throughout the session.
+ - **Acceptance Criteria:** There should be a prompt for users to enter their username before the quiz begins, and the username should be visible on the quiz screen throughout the session.
 
 Design
-👩🏻‍💻 View an example of a completed design section here
-
 Colour Scheme
 - **Primary Colour: Energetic Blue (#3498db)**
 - **Background Colour: Soft Gary (#ecf0f1)**
@@ -85,12 +81,14 @@ Wireframes
 ![image](https://github.com/user-attachments/assets/2cd15376-d983-48a6-84c4-3be06d876728)
 ![image](https://github.com/user-attachments/assets/b5d643f1-adfe-498a-93d9-d8b1d77931d8)
 
+![image](https://github.com/user-attachments/assets/22653df1-e045-4277-bfac-b00fb14b4903)
+
 
 **Features**
 
 - **Hover Effects:**
 
-  - Implement subtle hover effects on buttons and answer choices to enhance the interactive experience, providing visual feedback when users move their cursor over clickable elements.
+  - Implement subtle hover effects on buttons to enhance the interactive experience, providing visual feedback when users move their cursor over clickable elements.
 
 - **Timer Countdown:**
 
@@ -120,14 +118,30 @@ Wireframes
 
 Accessibility
 
-Technologies Used
+- **Color Contrast**
 
+  - Color contrast is utilized to enhance visibility and accessibility. Different colors are employed to quickly and simply indicate correct and incorrect answers, providing immediate feedback.
+
+- **Font Style**
+
+  - The chosen font style and size are optimized for individuals with visual impairments. This selection ensures easier readability, with the font's size and weight contributing to a more accessible reading experience.
+
+Technologies Used
+ - Gitub
+ - GitPod
+ - Balsamiq
+   
 Languages Used
+- HTML
+- CSS
+- JavaScript
 
 Frameworks, Libraries & Programs Used
+- FontAwsome
+- Google Fonts
 
 Deployment & Local Development
-👩🏻‍💻 View an example of a completed Deployment & Local Development section here
+-Deployment done via GitHub -->
 
 Deployment
 Include instructions here on how to deploy your project. For your first project you will most likely be using GitHub Pages.
@@ -142,9 +156,18 @@ How to Clone
 Place instructions on how to clone your project here.
 
 Testing
-Start as you mean to go on - and get used to writing a TESTING.md file from the very first project!
 
-Testing requirements aren't massive for your first project, however if you start using a TESTING.md file from your first project you will thank yourself later when completing your later projects, which will contain much more information.
+HTML Validation
+
+![image](https://github.com/user-attachments/assets/78a382ef-dc8e-4708-8715-c61a02280e87)
+
+CSS Validation
+
+![image](https://github.com/user-attachments/assets/2983c975-3965-407c-a0bc-716b17482be2)
+
+JS Validation
+
+![image](https://github.com/user-attachments/assets/1c1e6342-624a-4409-a011-0ce2668ff534)
 
 Use this part of the README to link to your TESTING.md file - you can view the example TESTING.md file here
 
@@ -158,9 +181,3 @@ Media
 
 Acknowledgments
 
-![image](https://github.com/user-attachments/assets/22653df1-e045-4277-bfac-b00fb14b4903)
-- **Primary Colour: Energetic Blue (#3498db)**
-- **Background Colour: Soft Gary (#ecf0f1)**
-- **Text Colour: Black (#000000)**
-- **Correct Colour: Fresh Green (#2ecc71)**
-- **Error Colour: Warm Red (#e74c3c)**
