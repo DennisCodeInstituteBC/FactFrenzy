@@ -93,7 +93,7 @@ nextBtn.onclick = () => {
         showQuestions(questionCount);
         queCounter(questionNumber);
         clearInterval(counter);
-        startTimer(timeValue);
+        startTimer(time);
         timeText.textContent = "Time Left";
         nextBtn.classList.remove('show');
     } else {
