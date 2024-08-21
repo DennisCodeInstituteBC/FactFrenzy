@@ -292,7 +292,7 @@ footer button.show{
 }
 
 .result-section .icon{
-    font-size: 120px;
+    font-size: 100px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -302,13 +302,24 @@ footer button.show{
 .result-section .completed-txt{
     padding-top: 20px;
     font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+}
+
+.username-output{
+    color: #0d6efd;
+}
+
+.total-txt{
+    text-align: center;
     font-size: 18px;
+    padding: 20px 0;
 }
 
 .result-section .total-txt span{
     display: flex;
     margin: 10px 0;
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 500;
 }
 

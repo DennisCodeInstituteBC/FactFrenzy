@@ -162,8 +162,14 @@ function showResult() {
     quizSection.classList.remove('activeQuiz');
     resultSection.classList.add('activeResult');
 
-    usernameOpt.innerHTML = Username.value;
-    startBtn.addEventListener('onclick', showResult);
+    // Get the user's name from the input field
+    const username = document.getElementById('Username').value;
+
+    // Insert the username into the span with class "username-output"
+    const usernameOutput = document.querySelector('.username-output');
+    usernameOutput.textContent = username;
+
+    // Display the user's score
     totalTxt.innerHTML = `<p>You got ${userScore} out of ${questions.length} correct!</p>`;
 }
 
