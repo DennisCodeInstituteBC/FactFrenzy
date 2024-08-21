@@ -125,6 +125,8 @@ function showQuestions(index) {
 
 // Function to handle the selection of an option
 function optionSelected(option, correctAnswer) {
+    console.log("testing");
+    
     clearInterval(counter); // Stop the timer when an option is selected
 
     if (option.textContent === correctAnswer) {
@@ -135,11 +137,13 @@ function optionSelected(option, correctAnswer) {
     }
 
     revealCorrectAnswers(correctAnswer);
+    console.log("correct answer")
     nextBtn.classList.add('show');
 }
 
 // Function to disable all options and reveal the correct answer
 function revealCorrectAnswers(correctAnswer) {
+    console.log("hello tesitng")
     const options = optionList.querySelectorAll('.option');
     options.forEach(option => {
         if (option.textContent === correctAnswer) {
@@ -147,17 +151,11 @@ function revealCorrectAnswers(correctAnswer) {
         } else {
             option.classList.add('incorrect');
         }
-        option.classList.add('disabled');
+        // option.classList.add('disabled');
     });
 }
 
-// Function to disable options (called when timer runs out)
-function disableOptions() {
-    const options = optionList.querySelectorAll('.option');
-    options.forEach(option => {
-        option.classList.add('disabled');
-    });
-}
+
 
 // Function to show the result at the end of the quiz
 function showResult() {
@@ -171,7 +169,7 @@ function queCounter(index) {
     totalQuestions.innerHTML = `<span>Question ${index} of ${questions.length}</span>`;
 }
 
-// Function to start the timer for each question
+
 function startTimer(time) {
     counter = setInterval(timer, 1000);
     function timer() {
@@ -179,9 +177,19 @@ function startTimer(time) {
         time--;
         if (time < 0) {
             clearInterval(counter);
-            revealCorrectAnswers(questions[questionCount].answer); // Highlight correct/incorrect answers
-            disableOptions(); // Disable all options
-            nextBtn.classList.add('show'); // Show the "Next" button
+            revealCorrectAnswers(questions[questionCount].answer); 
+            disableOptions(); 
+            nextBtn.classList.add('show'); 
         }
     }
 }
+
+// disabling options 
+// function disableOptions() {
+//     const options = document.querySelectorAll('.option');
+//     options.forEach(option => {
+//         option.classList.add('disabled');
+//         option.style.pointerEvents = 'none'; 
+//     });
+// }
+

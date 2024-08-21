@@ -186,14 +186,14 @@ section .option-txt .option:hover{
 }
 
 /* incorrect color */
-section .option-txt .option.incorrect{
+.option.incorrect{
     color: #e74c3c;
     background-color: rgb(240,147,138, 0.7);
     border: 1px solid #e74c3c;
 }
 
 /* correct color */
-section .option-txt .option.correct{
+.option.correct{
     color: #2ecc71;
     background-color: rgb(129,224,169, 0.7);
     border: 1px solid #2ecc71;
