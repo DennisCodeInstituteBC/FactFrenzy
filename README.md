@@ -114,13 +114,13 @@ Wireframes
 
 - **Quiz Themes Selection:**
 
-  - Introduce a selection of themes for quizzes, allowing users to choose or customize the visual appearance of the quiz interface. This could include different color schemes, backgrounds, and styles, adding variety and enhancing the aesthetic appeal of the platform.
+  - Introduce a selection of themes for quizzes, allowing users to choose or customize the visual appearance of the quiz interface. This could include different colour schemes, backgrounds, and styles, adding variety and enhancing the aesthetic appeal of the platform.
 
 Accessibility
 
 - **Color Contrast**
 
-  - Color contrast is utilized to enhance visibility and accessibility. Different colors are employed to quickly and simply indicate correct and incorrect answers, providing immediate feedback.
+  - Color contrast is utilized to enhance visibility and accessibility. Different colours are employed to quickly and simply indicate correct and incorrect answers, providing immediate feedback.
 
 - **Font Style**
 
@@ -141,19 +141,7 @@ Frameworks, Libraries & Programs Used
 - Google Fonts
 
 Deployment & Local Development
--Deployment done via GitHub -->
-
-Deployment
-Include instructions here on how to deploy your project. For your first project you will most likely be using GitHub Pages.
-
-Local Development
-The local development section gives instructions on how someone else could make a copy of your project to play with on their local machine. This section will get more complex in the later projects, and can be a great reference to yourself if you forget how to do this.
-
-How to Fork
-Place instructions on how to fork your project here.
-
-How to Clone
-Place instructions on how to clone your project here.
+-Deployment done via GitHub --> https://denniscodeinstitutebc.github.io/FactFrenzy/
 
 Testing
 
@@ -169,15 +157,4 @@ JS Validation
 
 ![image](https://github.com/user-attachments/assets/1c1e6342-624a-4409-a011-0ce2668ff534)
 
-Use this part of the README to link to your TESTING.md file - you can view the example TESTING.md file here
-
-Credits
-
-Code Used
-
-Content
-
-Media
-
-Acknowledgments
-
+Testing File --> https://github.com/user-attachments/files/16690893/factFrenzyTesting.txt
