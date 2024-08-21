@@ -9,6 +9,8 @@ const optionList = document.querySelector('.option-list');
 const timerSec = document.querySelector('.time-sec');
 const totalQuestions = document.querySelector('.total-questions');
 const totalTxt = document.querySelector('.total-txt');
+const Username = document.querySelector('.Username');
+const usernameOpt = document.querySelector('.username-output');
 
 let timeValue = 15;
 let questionCount = 0;
@@ -125,8 +127,6 @@ function showQuestions(index) {
 
 // Function to handle the selection of an option
 function optionSelected(option, correctAnswer) {
-    console.log("testing");
-    
     clearInterval(counter); // Stop the timer when an option is selected
 
     if (option.textContent === correctAnswer) {
@@ -161,6 +161,9 @@ function revealCorrectAnswers(correctAnswer) {
 function showResult() {
     quizSection.classList.remove('activeQuiz');
     resultSection.classList.add('activeResult');
+
+    usernameOpt.innerHTML = Username.value;
+    startBtn.addEventListener('onclick', showResult);
     totalTxt.innerHTML = `<p>You got ${userScore} out of ${questions.length} correct!</p>`;
 }
 
