@@ -85,7 +85,7 @@ startBtn.onclick = () => {
     startTimer(timeValue);
 }
 
-// Move to the next question or show results if it was the last question
+// Moving on to next question
 nextBtn.onclick = () => {
     if (questionCount < questions.length - 1) {
         questionCount++;
@@ -104,10 +104,10 @@ nextBtn.onclick = () => {
 
 // Restart the quiz by reloading the page
 restartBtn.onclick = () => {
-    window.location.reload(); // Reload the page to start over
+    window.location.reload();
 }
 
-// Function to display the current question and options
+// Displaying the current question and options
 function showQuestions(index) {
     const questionTag = `<span>${questions[index].numb}. ${questions[index].question}</span>`;
     let optionTag = '';
@@ -125,9 +125,9 @@ function showQuestions(index) {
     });
 }
 
-// Function to handle the selection of an option
+// Selecting an option
 function optionSelected(option, correctAnswer) {
-    clearInterval(counter); // Stop the timer when an option is selected
+    clearInterval(counter);
 
     if (option.textContent === correctAnswer) {
         option.classList.add('correct');
@@ -137,13 +137,11 @@ function optionSelected(option, correctAnswer) {
     }
 
     revealCorrectAnswers(correctAnswer);
-    console.log("correct answer")
     nextBtn.classList.add('show');
 }
 
-// Function to disable all options and reveal the correct answer
+// Show correct answer + disable selection
 function revealCorrectAnswers(correctAnswer) {
-    console.log("hello tesitng")
     const options = optionList.querySelectorAll('.option');
     options.forEach(option => {
         if (option.textContent === correctAnswer) {
@@ -151,34 +149,30 @@ function revealCorrectAnswers(correctAnswer) {
         } else {
             option.classList.add('incorrect');
         }
-        // option.classList.add('disabled');
+        option.classList.add('disabled');
     });
 }
 
 
 
-// Function to show the result at the end of the quiz
+// Result Section
 function showResult() {
     quizSection.classList.remove('activeQuiz');
     resultSection.classList.add('activeResult');
 
-    // Get the user's name from the input field
     const username = document.getElementById('Username').value;
-
-    // Insert the username into the span with class "username-output"
     const usernameOutput = document.querySelector('.username-output');
     usernameOutput.textContent = username;
 
-    // Display the user's score
     totalTxt.innerHTML = `<p>You got ${userScore} out of ${questions.length} correct!</p>`;
 }
 
-// Function to display the current question number and total questions
+// Number of questions
 function queCounter(index) {
     totalQuestions.innerHTML = `<span>Question ${index} of ${questions.length}</span>`;
 }
 
-
+// Timer
 function startTimer(time) {
     counter = setInterval(timer, 1000);
     function timer() {

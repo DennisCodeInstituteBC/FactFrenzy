@@ -155,7 +155,9 @@ body{
     align-items: center;
     justify-content: space-between;
     width: 150px;
+    font-weight: 700;
 }
+
 
 .quiz-section header .timer .time-sec{
     font-size: 18px;
