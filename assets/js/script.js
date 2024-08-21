@@ -185,11 +185,11 @@ function startTimer(time) {
 }
 
 // disabling options 
-// function disableOptions() {
-//     const options = document.querySelectorAll('.option');
-//     options.forEach(option => {
-//         option.classList.add('disabled');
-//         option.style.pointerEvents = 'none'; 
-//     });
-// }
+function disableOptions() {
+    const options = document.querySelectorAll('.option');
+    options.forEach(option => {
+        option.classList.add('disabled');
+        option.style.pointerEvents = 'none'; 
+    });
+}
 
