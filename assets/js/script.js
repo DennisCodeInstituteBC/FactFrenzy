@@ -14,33 +14,78 @@ let timeValue = 15;
 let questionCount = 0;
 let questionNumber = 1;
 let userScore = 0;
+let counter;
 
-// Placeholder functions and variables
-let counter; // Will be defined by the timer functions
-let timeText = document.querySelector(".timer .time-left"); // Adjust this selector based on your actual HTML
-let widthValue = 0; // Initialize as per your logic
+const questions = [
+    {
+        numb: 1,
+        question:"What is a group of crows called ?",
+        answer:"A Murder",
+        options:[
+         "A Pack",
+         "A Murder",
+         "A Parade",
+         "A Litter"
+        ]
+     },
+     {
+         numb: 2,
+         question:"Compared to their body weight, what animal is the strongest ?",
+         answer:"Dung Beetle",
+         options:[
+          "Dung Beetle",
+          "Elephant",
+          "Ant",
+          "Cow"
+         ]
+      },
+      {
+         numb: 3,
+         question:"How many dots appear on a pair of dice ?",
+         answer:"42",
+         options:[
+          "36",
+          "32",
+          "46",
+          "42"
+         ]
+      },
+      {
+         numb: 4,
+         question:"Which is the only body part that is fully grown from birth ?",
+         answer:"Eyes",
+         options:[
+          "Barin",
+          "Lungs",
+          "Eyes",
+          "Stomach"
+         ]
+      },
+      {
+         numb: 5,
+         question:"What is acrophobia a fear of ?",
+         answer:"Heights",
+         options:[
+          "Heights",
+          "Spiders",
+          "Holes",
+          "Water"
+         ]
+      },
+];
 
-// on Click function to go from Info Section => Quiz Section
+// Start the quiz and show the first question
 startBtn.onclick = () => { 
     infoSection.classList.remove("activeInfo");
     quizSection.classList.add("activeQuiz");
-    showQuestions(0);
+    showQuestions(0); 
     queCounter(1);
-    startTimer(15);
+    startTimer(timeValue);
 }
 
-const restart_Btn = resultSection.querySelector(".restart-btn");
-
-// on Click function to restart the quiz
-restart_Btn.onclick = () => {
-    window.location.reload();
-}
-
-const next_btn = document.querySelector("footer .next-btn");
-const question_count = document.querySelector("footer .total-questions");
-
-next_btn.onclick = () => {
-    if (questionCount < totalQuestions.textContent - 1) {
+// Move to the next question or show results if it was the last question
+nextBtn.onclick = () => {
+    if (questionCount < questions.length - 1) {
         questionCount++;
         questionNumber++;
         showQuestions(questionCount);
@@ -48,28 +93,95 @@ next_btn.onclick = () => {
         clearInterval(counter);
         startTimer(timeValue);
         timeText.textContent = "Time Left";
-        next_btn.classList.remove("show");
+        nextBtn.classList.remove('show');
     } else {
         clearInterval(counter);
         showResult();
     }
 }
 
-function showQuestions(index){
-    const question_txt=document.querySelector(".question-txt")
+// Restart the quiz by reloading the page
+restartBtn.onclick = () => {
+    window.location.reload(); // Reload the page to start over
+}
 
-    let quesiton_tag = '<span>'+questions[index].numb+". "+questions[index].questions + '</span>';
-    let option_tag = '<div class = "option"></span>' + questions[index].options[0]+'</span><div>' 
-    + '<div class = "option"></span>' + questions[index].options[1]+'</span><div>'
-    + '<div class = "option"></span>' + questions[index].options[2]+'</span><div>' 
-    + '<div class = "option"></span>' + questions[index].options[3]+'</span><div>';
-    question_txt.innerHTML = quesiton_tag;
-    option_list.innerHTML = option_tag;
+// Function to display the current question and options
+function showQuestions(index) {
+    const questionTag = `<span>${questions[index].numb}. ${questions[index].question}</span>`;
+    let optionTag = '';
 
-    const option = option_list.querySelectorAll(".option");
+    questions[index].options.forEach(option => {
+        optionTag += `<div class="option">${option}</div>`;
+    });
 
-    for (i=o; i < option.length; i++){
-        option[i].setAttribute("onclick", "optionSelected(this)");
+    questionTxt.innerHTML = questionTag;
+    optionList.innerHTML = optionTag;
+
+    const options = optionList.querySelectorAll('.option');
+    options.forEach(option => {
+        option.onclick = () => optionSelected(option, questions[index].answer);
+    });
+}
+
+// Function to handle the selection of an option
+function optionSelected(option, correctAnswer) {
+    clearInterval(counter); // Stop the timer when an option is selected
+
+    if (option.textContent === correctAnswer) {
+        option.classList.add('correct');
+        userScore++;
+    } else {
+        option.classList.add('incorrect');
     }
 
+    revealCorrectAnswers(correctAnswer);
+    nextBtn.classList.add('show');
+}
+
+// Function to disable all options and reveal the correct answer
+function revealCorrectAnswers(correctAnswer) {
+    const options = optionList.querySelectorAll('.option');
+    options.forEach(option => {
+        if (option.textContent === correctAnswer) {
+            option.classList.add('correct');
+        } else {
+            option.classList.add('incorrect');
+        }
+        option.classList.add('disabled');
+    });
+}
+
+// Function to disable options (called when timer runs out)
+function disableOptions() {
+    const options = optionList.querySelectorAll('.option');
+    options.forEach(option => {
+        option.classList.add('disabled');
+    });
+}
+
+// Function to show the result at the end of the quiz
+function showResult() {
+    quizSection.classList.remove('activeQuiz');
+    resultSection.classList.add('activeResult');
+    totalTxt.innerHTML = `<p>You got ${userScore} out of ${questions.length} correct!</p>`;
+}
+
+// Function to display the current question number and total questions
+function queCounter(index) {
+    totalQuestions.innerHTML = `<span>Question ${index} of ${questions.length}</span>`;
+}
+
+// Function to start the timer for each question
+function startTimer(time) {
+    counter = setInterval(timer, 1000);
+    function timer() {
+        timerSec.textContent = time;
+        time--;
+        if (time < 0) {
+            clearInterval(counter);
+            revealCorrectAnswers(questions[questionCount].answer); // Highlight correct/incorrect answers
+            disableOptions(); // Disable all options
+            nextBtn.classList.add('show'); // Show the "Next" button
+        }
+    }
 }
